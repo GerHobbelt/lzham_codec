@@ -2,7 +2,7 @@
 // LZHAM is in the Public Domain. Please see the Public Domain declaration at the end of include/lzham.h
 #pragma once
 
-#if (defined(_AIX43))    
+#if (defined(_AIX43)) || defined(LZHAM_INCLUDE_STDINT) 
 #include <stdint.h>
 #endif
 
