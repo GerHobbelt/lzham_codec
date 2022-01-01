@@ -1,5 +1,8 @@
 // File: lzham_symbol_codec.cpp
 // LZHAM is in the Public Domain. Please see the Public Domain declaration at the end of include/lzham.h
+#if defined(HAVE_ALLOCA_H)
+#include <alloca.h>
+#endif
 #include "lzham_core.h"
 #include "lzham_symbol_codec.h"
 #include "lzham_huffman_codes.h"
