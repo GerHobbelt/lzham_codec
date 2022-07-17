@@ -114,6 +114,7 @@ namespace lzham
       char m_name[16];
    };
 #else
+#define LZHAM_NOTE_UNUSED(x) (void)x
    class semaphore
    {
       LZHAM_NO_COPY_OR_ASSIGNMENT_OP(semaphore);
@@ -160,10 +161,10 @@ namespace lzham
          }
       }
 
-      inline bool wait(uint32 milliseconds = LZHAM_UINT32_MAX)
+      inline bool wait(uint32 milliseconds = UINT32_MAX)
       {
          int status;
-         if (milliseconds == LZHAM_UINT32_MAX)
+         if (milliseconds == UINT32_MAX)
          {
             status = sem_wait(&m_sem);
          }
