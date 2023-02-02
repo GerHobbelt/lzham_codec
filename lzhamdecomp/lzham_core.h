@@ -249,6 +249,7 @@ const bool c_lzham_big_endian_platform = !c_lzham_little_endian_platform;
 #include <limits.h>
 #include <algorithm>
 #include <errno.h>
+#include <stdint.h>
 
 #include "lzham.h"
 #include "lzham_config.h"
