@@ -17,7 +17,7 @@
 #if LZHAM_USE_PTHREADS_API
 
 #ifdef WIN32
-#pragma comment(lib, "../ext/libpthread/lib/pthreadVC2.lib")
+//#pragma comment(lib, "../ext/libpthread/lib/pthreadVC2.lib")
 #endif
 
 namespace lzham
