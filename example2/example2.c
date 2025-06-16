@@ -25,7 +25,7 @@ static const char *s_pStr = "Good morning Dr. Chandra. This is Hal. I am ready f
    "Hal... Dave and I believe that there's something about the mission that we weren't told." \
    "Something that the rest of the crew know and that you know. We'd like to know whether this is true.";
 
-int main(int argc, char *argv[])
+int main(int argc, const char **argv)
 {
    uint step = 0;
    int cmp_status;
@@ -34,7 +34,6 @@ int main(int argc, char *argv[])
    uLong uncomp_len = src_len;
    uint8 *pCmp, *pUncomp;
    uint total_succeeded = 0;
-   argc, argv;
 
    printf("LZHAM example2 (single function call compression/decompression)\nUsing library version: %s\n", ZLIB_VERSION);
 
