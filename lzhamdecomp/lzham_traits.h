@@ -67,7 +67,9 @@ namespace lzham
    // Defines type Q as bitwise copyable.
 #define LZHAM_DEFINE_BITWISE_COPYABLE(Q) template<> struct bitwise_copyable<Q> { enum { cFlag = true }; };
 
-#if defined(__APPLE__) || defined(__NetBSD__)
+#if defined(__APPLE__)
+   #define LZHAM_IS_POD(T) std::is_pod<T>::value
+#elif defined(__NetBSD__)
    #define LZHAM_IS_POD(T) std::__is_pod<T>::__value
 #else
    #define LZHAM_IS_POD(T) __is_pod(T)
@@ -116,7 +118,7 @@ namespace lzham
       {
          if (LZHAM_IS_SCALAR_TYPE(T))
          {
-            memset(p, 0, sizeof(T) * n);
+            memset((void *)p, 0, sizeof(T) * n);
          }
          else
          {
